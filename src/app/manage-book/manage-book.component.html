@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="books">
+  <div class="book-contents">
+    <h1>Books Details</h1>
+  </div>
+  <div class="book-contents">
+
+    @for(book of booksArray; track booksArray.id;let ind=$index){
+      <div class="book-inner-content">
+      <div class="inner-contents">
+        <li>id: {{ind+1}}</li>
+      </div>
+      <div class="inner-contents">
+        <img src="{{book.image}}" alt="">
+      </div>
+      <div class="inner-contents">
+        <li>Name: {{book.name}}</li>
+      </div>
+      <div class="inner-contents">
+        <li (click)="showUpdate(ind)">update</li>
+        <li (click)="deleteBook(ind)">delete</li>
+      </div>
+    </div>
+    }
+  </div>
+  </div>
+
+  @if(isShowupdate){
+
+  <div class="background">
+    <div class="outter-contents">
+      <div class="form-contents">
+        <h1>Update Book</h1>
+        <i class="fa-solid fa-xmark" (click)="showUpdate(0)"></i>
+      </div>
+      <form [formGroup]="bookform">
+        <div class="form-contents">
+          <input type="text" placeholder="Enter Book Name" formControlName="name">
+        </div>
+        <div class="form-contents">
+          <input type="file" placeholder="Enter Book Image" formControlName="image" (change)="selectedImage($event)">
+        </div>
+        <div class="form-contents">
+          <input type="text" placeholder="Enter Book Description" formControlName="description">
+        </div>
+        <div class="form-contents">
+          <button [disabled]="!bookform.valid" (click)="UpdateDetails(bookform.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+}

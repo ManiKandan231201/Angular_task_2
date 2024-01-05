@@ -1,0 +1,32 @@
+<div class="books">
+  <div class="book-contents">
+    <h1>Books Details</h1>
+  </div>
+  <div class="book-contents">
+
+    @for(book of booksArray; track booksArray.id;let ind=$index){
+      <div class="book-inner-content">
+      <div class="inner-contents">
+        <li>id: {{ind+1}}</li>
+      </div>
+      <div class="inner-contents">
+        <img src="{{book.image}}" alt="">
+      </div>
+      <div class="inner-contents">
+        <li>Name: {{book.name}}</li>
+      </div>
+      <div class="inner-contents">
+        <li (click)="showDescription(ind)">View Details</li>
+      </div>
+    </div>
+
+    @if(isShowDescription[ind]){
+      <div class="book-inner-content">
+        <p>{{book.description}}</p>
+      </div>
+    }
+
+    }
+  </div>
+  </div>
+

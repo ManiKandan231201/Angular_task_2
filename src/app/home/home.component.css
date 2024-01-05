@@ -1,0 +1,40 @@
+:host{
+  --background-color:#FF004D;
+  --color:#add235;
+}
+.books{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.book-contents{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.book-inner-content{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+.book-contents li{
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.inner-contents:nth-child(4) li{
+  color: var(--background-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.inner-contents:nth-child(4) li:hover{
+  color: var(--color);
+  text-decoration: underline;
+}
+
+.book-contents img{
+  width: 50px;
+  height: 50px;
+}

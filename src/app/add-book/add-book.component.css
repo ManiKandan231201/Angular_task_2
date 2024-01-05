@@ -1,0 +1,112 @@
+:host{
+  --background-color:#FF004D;
+  --color:#FAEF5D;
+}
+.books{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 20px;
+}
+.bookcontents{
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 3px 10px 5px rgba(0,0,0,0.2);
+}
+.bookcontents p{
+  text-align: justify;
+}
+.inner-contents{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.bookcontents:nth-child(1){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bookcontents:nth-child(1) h1{
+  font-size: 4rem;
+  color: var(--background-color);
+}
+.contents img{
+  width: 70px;
+  height: 70px;
+}
+.outter{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  background-color: rgba(0, 136, 255, 0.411);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 86.5vh;
+  gap: 10px;
+
+}
+.outter-contents{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: white;
+}
+.form-contents h1{
+  color: var(--background-color);
+}
+.form-contents:nth-child(1){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.form-contents{
+  margin-top: 20px;
+}
+.form-contents i{
+  font-size: 2rem;
+  cursor: pointer;
+}
+.form-contents input{
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.form-contents input:focus{
+  outline: none;
+}
+.form-contents button{
+  width: 300px;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--color);
+  cursor: pointer;
+}
+.form-contents button:hover{
+  background-color: var(--color);
+  color: var(--background-color);
+  transition: all 400ms ease-in-out;
+}
+
+
